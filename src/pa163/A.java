@@ -36,7 +36,7 @@ public class A {
             // TODO Auto-generated method stub
             String charset = "utf-8";
             int page = 0;
-            for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < 40; i++) {
                 // String url_str =
                 // "http://music.163.com/#/discover/playlist/?order=hot&cat=%E6%B0%91%E8%B0%A3&limit=35&offset="+page;
                 String url_str = "http://music.163.com/discover/playlist/?order=hot&cat=民谣&limit=35&offset=" + page;
@@ -65,6 +65,7 @@ public class A {
             Document doc = Jsoup.parse(htm_str);
             Elements links = doc.select("div[class=g-bd]").select("div[class=g-wrap p-pl f-pr]")
                     .select("ul[class=m-cvrlst f-cb]").select("div[class=u-cover u-cover-1");
+            System.out.println("========>" + url_str + "<========");
             java.util.List<String> lists = new ArrayList<>();
             for (Element link : links) {
                 Elements lin = link.select("a");
